@@ -8,7 +8,7 @@ import os
 app = Flask(__name__)
 
 # CSV dosyasını oku
-df = pd.read_csv(r"C:\Users\Hilal Öklük\Downloads\evde_bakilabilir_bitkiler_dataset_guncel.csv")
+df = pd.read_csv(r"evde_bakilabilir_bitkiler_dataset_guncel.csv")
 
 
 # --- Karar Ağacı Çizimi ---
