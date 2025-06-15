@@ -62,7 +62,7 @@ def karar_agaci_uyumlu_ciz(bitki_adi, girdi, en_iyi_satir):
     dot.node("result", f"Önerilen Bitki:\n{bitki_adi}", shape="box", style="filled", fillcolor="gold")
     dot.edge(previous_node, "result", style="bold", color="blue")
 
-    dot.render("bitki_karar_agaci_uyumlu", format="png", cleanup=True)
+    ##dot.render("bitki_karar_agaci_uyumlu", format="png", cleanup=True)
     dot.view()
 
 
