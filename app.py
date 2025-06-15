@@ -83,56 +83,6 @@ def tahmin_et(girdi):
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         if puan > en_yuksek_puan:
             en_yuksek_puan = puan
             en_iyi_bitki = satir["Bitki Adı"]
@@ -209,4 +159,5 @@ def index():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+   port = int(os.environ.get("PORT", 5000))
+   app.run(host="0.0.0.0", port=port)
