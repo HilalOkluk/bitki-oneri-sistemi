@@ -2,6 +2,10 @@
 
 Bu proje, kullanıcıdan alınan bütçe, cephe, sulama sıklığı, çiçek durumu, koku ve boyut gibi kriterlere göre en uygun ev bitkisini öneren bir Flask tabanlı web uygulamasıdır.
 
+## 🚀 Canlı Uygulama
+
+🔗 [Canlı Uygulamayı Görüntüle](https://4dscxhwqqq8nlqlrgaux53.streamlit.app/)
+
 ## 🔧 Özellikler
 - CSV veri kümesine dayalı öneri sistemi
 - Kriter bazlı puanlama ile en uygun bitki seçimi
