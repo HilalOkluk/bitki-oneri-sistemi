@@ -2,7 +2,7 @@ from flask import Flask, render_template, request
 import pandas as pd
 import requests
 from unidecode import unidecode
-from graphviz import Digraph
+##from graphviz import Digraph
 import os
 
 app = Flask(__name__)
