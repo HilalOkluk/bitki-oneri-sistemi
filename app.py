@@ -11,59 +11,59 @@ app = Flask(__name__)
 df = pd.read_csv(r"evde_bakilabilir_bitkiler_dataset_guncel.csv")
 
 
-# --- Karar Ağacı Çizimi ---
-def karar_agaci_uyumlu_ciz(bitki_adi, girdi, en_iyi_satir):
-    dot = Digraph()
-    dot.attr(rankdir='TB')  # Yukarıdan aşağı
+# # --- Karar Ağacı Çizimi ---
+# def karar_agaci_uyumlu_ciz(bitki_adi, girdi, en_iyi_satir):
+#     dot = Digraph()
+#     dot.attr(rankdir='TB')  # Yukarıdan aşağı
 
-    kriterler = [
-        ("Bütçe", "butce"),
-        ("Cephe", "cephe"),
-        ("Sulama Sıklığı", "sulama"),
-        ("Çiçek Açıyor mu", "cicek"),
-        ("Kokulu mu", "koku"),
-        ("Boyut", "boyut")
-    ]
+#     kriterler = [
+#         ("Bütçe", "butce"),
+#         ("Cephe", "cephe"),
+#         ("Sulama Sıklığı", "sulama"),
+#         ("Çiçek Açıyor mu", "cicek"),
+#         ("Kokulu mu", "koku"),
+#         ("Boyut", "boyut")
+#     ]
 
-    dot.node("start", "Başla", shape="ellipse")
-    previous_node = "start"
+#     dot.node("start", "Başla", shape="ellipse")
+#     previous_node = "start"
 
-    for i, (kriter_label, kriter_key) in enumerate(kriterler):
-        secenekler = list(df[kriter_label].unique())
-        correct_option = en_iyi_satir[kriter_label]
-        user_option = girdi[kriter_key]
+#     for i, (kriter_label, kriter_key) in enumerate(kriterler):
+#         secenekler = list(df[kriter_label].unique())
+#         correct_option = en_iyi_satir[kriter_label]
+#         user_option = girdi[kriter_key]
 
-        option_nodes = {}
-        for secenek in secenekler:
-            node_id = f"{i}_{secenek}"
-            if secenek == correct_option and user_option == correct_option:
-                renk = "lightgreen"
-            else:
-                renk = "lightcoral"
-            label = f"{kriter_label}: {secenek}"
-            dot.node(node_id, label, style="filled", fillcolor=renk)
-            option_nodes[secenek] = node_id
+#         option_nodes = {}
+#         for secenek in secenekler:
+#             node_id = f"{i}_{secenek}"
+#             if secenek == correct_option and user_option == correct_option:
+#                 renk = "lightgreen"
+#             else:
+#                 renk = "lightcoral"
+#             label = f"{kriter_label}: {secenek}"
+#             dot.node(node_id, label, style="filled", fillcolor=renk)
+#             option_nodes[secenek] = node_id
 
-        for secenek, node_id in option_nodes.items():
-            if secenek == correct_option:
-                if user_option == correct_option:
-                    edge_style = "bold"
-                    edge_color = "green"
-                else:
-                    edge_style = "dashed"
-                    edge_color = "red"
-            else:
-                edge_style = "dotted"
-                edge_color = "gray"
-            dot.edge(previous_node, node_id, style=edge_style, color=edge_color)
+#         for secenek, node_id in option_nodes.items():
+#             if secenek == correct_option:
+#                 if user_option == correct_option:
+#                     edge_style = "bold"
+#                     edge_color = "green"
+#                 else:
+#                     edge_style = "dashed"
+#                     edge_color = "red"
+#             else:
+#                 edge_style = "dotted"
+#                 edge_color = "gray"
+#             dot.edge(previous_node, node_id, style=edge_style, color=edge_color)
 
-        previous_node = option_nodes[correct_option]
+#         previous_node = option_nodes[correct_option]
 
-    dot.node("result", f"Önerilen Bitki:\n{bitki_adi}", shape="box", style="filled", fillcolor="gold")
-    dot.edge(previous_node, "result", style="bold", color="blue")
+#     dot.node("result", f"Önerilen Bitki:\n{bitki_adi}", shape="box", style="filled", fillcolor="gold")
+#     dot.edge(previous_node, "result", style="bold", color="blue")
 
-    ##dot.render("bitki_karar_agaci_uyumlu", format="png", cleanup=True)
-     ##dot.view()
+#     dot.render("bitki_karar_agaci_uyumlu", format="png", cleanup=True)
+#      dot.view()###
 
 
 # --- Tahmin Fonksiyonu ---
