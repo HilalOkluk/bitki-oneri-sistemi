@@ -23,3 +23,6 @@ Bu proje, kullanıcıdan alınan bütçe, cephe, sulama sıklığı, çiçek dur
 ```bash
 pip install flask pandas graphviz unidecode requests
 python oneri.py
+
+## 👩‍💻 Geliştirici
+[Hilal Öklük](https://github.com/HilalOkluk)
