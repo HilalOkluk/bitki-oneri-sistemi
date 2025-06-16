@@ -4,7 +4,7 @@ Bu proje, kullanıcıdan alınan bütçe, cephe, sulama sıklığı, çiçek dur
 
 ## 🚀 Canlı Uygulama
 
-🔗 [Canlı Uygulamayı Görüntüle](https://4dscxhwqqq8nlqlrgaux53.streamlit.app/)
+🔗 [Canlı Uygulamayı Görüntüle](https://bitki-oneri-sistemi.onrender.com/)
 
 ## 🔧 Özellikler
 - CSV veri kümesine dayalı öneri sistemi
