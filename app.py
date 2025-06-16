@@ -88,8 +88,8 @@ def tahmin_et(girdi):
             en_iyi_bitki = satir["Bitki Adı"]
             en_iyi_satir = satir
 
-    if en_iyi_satir is not None:
-        karar_agaci_uyumlu_ciz(en_iyi_bitki, girdi, en_iyi_satir)
+    # if en_iyi_satir is not None:
+    #     karar_agaci_uyumlu_ciz(en_iyi_bitki, girdi, en_iyi_satir)
 
     return en_iyi_bitki if en_iyi_bitki else "Uygun bitki bulunamadı"
 
