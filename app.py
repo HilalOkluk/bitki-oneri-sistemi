@@ -63,7 +63,7 @@ def karar_agaci_uyumlu_ciz(bitki_adi, girdi, en_iyi_satir):
     dot.edge(previous_node, "result", style="bold", color="blue")
 
     ##dot.render("bitki_karar_agaci_uyumlu", format="png", cleanup=True)
-    dot.view()
+     ##dot.view()
 
 
 # --- Tahmin Fonksiyonu ---
